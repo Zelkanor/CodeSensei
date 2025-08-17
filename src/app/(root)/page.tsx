@@ -1,33 +1,35 @@
 import Link from "next/link";
 import React from "react";
 
+import QuestionCard from "@/components/cards/QuestionCard";
 import HomeFilter from "@/components/filter/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
-const questions = [
+const questions: Question[] = [
   {
     _id: "1",
     title: "How to implement a responsive design?",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: [
       {
         _id: "1",
         name: "css",
         questions: 120,
-        showCount: true,
-        compact: false,
       },
       {
         _id: "2",
         name: "html",
         questions: 80,
-        showCount: true,
-        compact: false,
       },
     ],
-    author: { _id: "1", name: "John Doe" },
-    createdAt: new Date().toISOString(),
+    author: {
+      _id: "1",
+      name: "John Doe",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUndSzxcF1UbSXX3bVILVaUbSIhoc_GEA8g&s",
+    },
+    createdAt: new Date(),
     upvotes: 10,
     downvotes: 2,
     answers: 5,
@@ -36,25 +38,26 @@ const questions = [
   {
     _id: "2",
     title: "How to implement a responsive design?",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: [
       {
         _id: "1",
         name: "css",
         questions: 120,
-        showCount: true,
-        compact: false,
       },
       {
         _id: "2",
         name: "html",
         questions: 80,
-        showCount: true,
-        compact: false,
       },
     ],
-    author: { _id: "1", name: "John Doe" },
-    createdAt: new Date().toISOString(),
+    author: {
+      _id: "1",
+      name: "John Doe",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUndSzxcF1UbSXX3bVILVaUbSIhoc_GEA8g&s",
+    },
+    createdAt: new Date(),
     upvotes: 10,
     downvotes: 2,
     answers: 5,
@@ -100,7 +103,7 @@ const Home = async ({ searchParams }: SearchParams) => {
       <HomeFilter />
       <div className="mt-10 flex w-full flex-col gap-6">
         {filteredQuestions.map((question) => (
-          <h1 key={question._id}>{question.title}</h1>
+          <QuestionCard key={question._id} question={question} />
         ))}
       </div>
     </>

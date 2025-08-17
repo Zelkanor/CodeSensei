@@ -8,9 +8,9 @@ import TagCard from "../cards/TagCard";
 
 const hotQuestions = [
   // Example questions, replace with actual data
-  { _id: 1, title: "How to implement a responsive design?" },
-  { _id: 2, title: "What are the best practices for React?" },
-  { _id: 3, title: "How to optimize performance in Next.js?" },
+  { _id: "1", title: "How to implement a responsive design?" },
+  { _id: "2", title: "What are the best practices for React?" },
+  { _id: "3", title: "How to optimize performance in Next.js?" },
 ];
 
 const popularTags = [
